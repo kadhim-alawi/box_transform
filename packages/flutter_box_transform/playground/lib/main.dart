@@ -493,8 +493,8 @@ class _PlaygroundState extends State<Playground> with WidgetsBindingObserver {
                       Positioned.fill(
                         child: GridPaper(
                           color: Theme.of(context).brightness == Brightness.dark
-                              ? kGridColor.withValues(alpha: 0.05)
-                              : kGridColor.withValues(alpha: 0.1),
+                              ? kGridColor.withOpacity(0.05)
+                              : kGridColor.withOpacity(0.1),
                         ),
                       ),
                       if (model.clampingEnabled && model.playgroundArea != null)
@@ -826,7 +826,7 @@ class _ClampingRectState extends State<ClampingRect> {
         child: DecoratedBox(
           decoration: BoxDecoration(
             color:
-                (anyTerminalSize ? Colors.orange : mainColor).withValues(alpha: 0.1),
+                (anyTerminalSize ? Colors.orange : mainColor).withOpacity(0.1),
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(6),
             ),
@@ -1055,7 +1055,7 @@ class BoxesPanel extends StatelessWidget {
                   key: ValueKey(box.name),
                   child: Container(
                     color: box.name == model.selectedBox?.name
-                        ? Theme.of(context).colorScheme.primary.withValues(alpha: 0.2)
+                        ? Theme.of(context).colorScheme.primary.withOpacity(0.2)
                         : null,
                     child: ListTile(
                       title: Text(box.name),
@@ -2225,7 +2225,7 @@ class KeyboardListenerIndicator extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color:
-                      Theme.of(context).colorScheme.onPrimary.withValues(alpha: 0.2),
+                      Theme.of(context).colorScheme.onPrimary.withOpacity(0.2),
                   blurRadius: 1,
                   offset: const Offset(1, 3),
                 ),
